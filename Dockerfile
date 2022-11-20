@@ -16,4 +16,5 @@ RUN yarn && yarn build
 WORKDIR /upg-package/upg-fork/packages/upg
 RUN yarn pack
 RUN mv gptlabs-upg-v0.1.11.tgz /upg-package/
+WORKDIR /upg-package
 RUN npm install -g file:gptlabs-upg-v0.1.11.tgz
