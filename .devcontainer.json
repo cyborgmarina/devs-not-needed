@@ -4,22 +4,23 @@
 		"dockerfile": "Dockerfile",
 		// Update 'VARIANT' to pick an Ubuntu version: jammy / ubuntu-22.04, focal / ubuntu-20.04, bionic /ubuntu-18.04
 		// Use ubuntu-22.04 or ubuntu-18.04 on local arm64/Apple Silicon.
-		"args": { "VARIANT": "focal" }
+		"args": {
+			"VARIANT": "focal"
+		}
 	},
-
-	// Use 'forwardPorts' to make a list of ports inside the container available locally.
-	"forwardPorts": [8080, 80, 23462, 6080],
-  "features": {
-    "ghcr.io/devcontainers/features/node:1": {},
-	"ghcr.io/devcontainers/features/github-cli:1": {},
-	"ghcr.io/devcontainers/features/docker-in-docker:1": {
-		"version": "latest",
-		"moby": true
-	}
-  },
-	// Use 'postCreateCommand' to run commands after the container is created.
-	"postCreateCommand": "bash install.sh"
-
-	// Comment out to connect as root instead. More info: https://aka.ms/vscode-remote/containers/non-root.
-	//"remoteUser": "vscode"
+	"forwardPorts": [
+		8080,
+		80,
+		23462,
+		6080
+	],
+	"features": {
+		"ghcr.io/devcontainers/features/node:1": {},
+		"ghcr.io/devcontainers/features/github-cli:1": {},
+		"ghcr.io/devcontainers/features/docker-in-docker:1": {
+			"version": "latest",
+			"moby": true
+		}
+	},
+	"postCreateCommand": "bash install.sh && source .bash_aliases && upg login"
 }
