@@ -1,12 +1,7 @@
 {
-	"name": "Ubuntu",
+	"name": "devs-not-needed",
 	"build": {
-		"dockerfile": "Dockerfile",
-		// Update 'VARIANT' to pick an Ubuntu version: jammy / ubuntu-22.04, focal / ubuntu-20.04, bionic /ubuntu-18.04
-		// Use ubuntu-22.04 or ubuntu-18.04 on local arm64/Apple Silicon.
-		"args": {
-			"VARIANT": "focal"
-		}
+		"dockerfile": "Dockerfile"
 	},
 	"forwardPorts": [
 		8080,
@@ -15,12 +10,12 @@
 		6080
 	],
 	"features": {
-		"ghcr.io/devcontainers/features/node:1": {},
 		"ghcr.io/devcontainers/features/github-cli:1": {},
 		"ghcr.io/devcontainers/features/docker-in-docker:1": {
 			"version": "latest",
 			"moby": true
 		}
 	},
-	"postCreateCommand": "bash install.sh && source .bash_aliases && upg login"
+	"postCreateCommand": ""
+//	"remoteUser": "node"
 }

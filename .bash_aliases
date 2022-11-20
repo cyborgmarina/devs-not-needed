@@ -1,1 +1,0 @@
-alias upg="node $CODESPACE_VSCODE_FOLDER/upg-fork/packages/upg/dist/bin.js"
