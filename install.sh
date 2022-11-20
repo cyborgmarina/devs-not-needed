@@ -7,6 +7,6 @@ cd ..
 git clone https://github.com/marinacabrera/upg-fork
 cd upg-fork
 yarn link "auth0-node-client" && yarn && yarn build
-echo "source $CODESPACE_VSCODE_FOLDER/.bash_aliases"
+echo "source $CODESPACE_VSCODE_FOLDER/.bash_aliases" >> ~/.bashrc
 unset GITHUB_TOKEN
 echo "Type 'upg login', then universal-program-generate useful stuff :)"
